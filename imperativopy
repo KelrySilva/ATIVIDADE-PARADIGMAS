@@ -1,0 +1,26 @@
+funcionarios = [
+    {"nome": "Kelry Silva",  "cargo": "Engenheira de Software", "salario": 8500.00},
+    {"nome": "Bruno Costa",  "cargo": "Analista Junior",        "salario": 2800.00},
+    {"nome": "Pedro Rusvel", "cargo": "Gerente de Produto",     "salario": 11200.00},
+    {"nome": "Victoria Silva", "cargo": "Designer UX",            "salario": 4300.00},
+    {"nome": "Eduarda Lima", "cargo": "Estagiaria",             "salario": 1500.00},
+    {"nome": "Renata Borges",  "cargo": "DevOps Engineer",        "salario": 7000.00},
+]
+
+limite = 3000.00
+total_bonus = 0.0
+filtrados = []
+
+# filtrando quem ganha acima do limite
+for f in funcionarios:
+    if f["salario"] > limite:
+        filtrados.append(f)
+
+# calculando o bonus de cada um e somando o total
+for f in filtrados:
+    bonus = f["salario"] * 0.10
+    total_bonus += bonus
+    print(f"{f['nome']} | Salario: R$ {f['salario']:.2f} | Bonus: R$ {bonus:.2f}")
+
+print(f"\nTotal gasto com bonus: R$ {total_bonus:.2f}")
+print(f"Funcionarios que recebem bonus: {len(filtrados)}")
